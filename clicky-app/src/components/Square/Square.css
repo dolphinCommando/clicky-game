@@ -1,0 +1,12 @@
+.square {
+  width: 300px;
+  height: 400px;
+  box-shadow: 3px 6px #99999999;
+  margin: 5px;
+  background-color: #ffffffff;
+}
+
+.square:hover {
+  transform: scale(1.25);
+  box-shadow: 4px 8px #99999999;
+}
