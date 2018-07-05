@@ -1,23 +1,37 @@
 import React from 'react';
 import './Board.css';
-const fs = require('fs');
+import Square from '../Square';
+//import * as fs from 'fs';
+const ip = "./images/";
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
-    this.images = getImageFiles();
+    this.images = [
+      ip + "mario.png",
+      ip + "peach.png",
+      ip + "toad.png",
+      ip + "luigi.png",
+      ip + "bowser.png",
+      ip + "yoshi.png",
+      ip + "pirahnaplant.png",
+      ip + "goomba.png",
+      ip + "hammerbro.png"
+    ]
     this.state = {
       complete: false
     }
   }
-  getImageFiles = () => {
-    fs.readdir('~/clicky-app/public/images', (err, files) => {
+  /*
+  getImageFiles() {
+    fs.readdir('../../public/images', (err, files) => {
       if (err) throw err;
       console.log(files);
       return files;
     });
   }
-  randomizeImages = () => {
+  */
+  randomizeImages() {
     let idxRandom = [];
     let idxTemp = [];
     let img = this.images;
@@ -39,7 +53,7 @@ class Board extends React.Component {
     return idxRandom.map(index => img[index]);  
   }
   render() {
-    const randomImages = randomizeImages();
+    const randomImages = this.randomizeImages();
     const rows = randomImages.map(image => <Square img={image} />);
     return (
       <div className="row">

@@ -12,8 +12,8 @@ class Square extends React.Component {
   render() {
     let img = this.props.img;
     return (
-      <div className="col-4 square" onClick={() => this.setState({click: this.state.click + 1})}>
-        <img src={img} alt={img.substr(0, img.lastIndexOf('.'))}></img>
+      <div className="col-3 square" onClick={() => this.setState({click: this.state.click + 1})}>
+        <img src={img} alt={img.substr(img.lastIndexOf('/'), img.lastIndexOf('.'))}></img>
       </div>
     );
   }
