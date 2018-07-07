@@ -19,8 +19,9 @@ class Board extends React.Component {
       ip + "hammerbro.png"
     ]
     this.state = {
-      complete: false
-    }
+      squares: new Array(this.images.length).fill(0),
+      indices: [...this.images.keys()]
+    };
   }
   /*
   getImageFiles() {
@@ -31,7 +32,18 @@ class Board extends React.Component {
     });
   }
   */
-  randomizeImages() {
+
+  handleClick(i) {
+    const squaresCopy = Object.assign({}, this.state.squares);
+    squaresCopy[i] += 1;
+    const randomIdx = this.randomizeArray();
+    this.setState({
+      indices: randomIdx,
+      squares: squaresCopy
+    });  
+  };
+
+  randomizeArray() {
     let idxRandom = [];
     let idxTemp = [];
     let img = this.images;
@@ -49,12 +61,15 @@ class Board extends React.Component {
       idxTemp.splice(randomIdx, 1);
       count++;
     }
-    console.log(idxRandom);
-    return idxRandom.map(index => img[index]);  
-  }
+    //console.log(idxRandom);
+    return idxRandom;    
+  };
+
   render() {
-    const randomImages = this.randomizeImages();
-    const rows = randomImages.map(image => <Square img={image} />);
+    console.log(this.state.squares);
+    const rows = this.state.indices.map(index => {
+      return (<Square img={this.images[index]} onClick={() => this.handleClick(index)} />)
+    });
     return (
       <div className="row">
         {rows}
