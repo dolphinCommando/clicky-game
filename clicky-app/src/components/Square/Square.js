@@ -1,16 +1,12 @@
 import React from 'react';
 import './Square.css';
 
-class Square extends React.Component {
-  render() {
-    let img = this.props.img;
-    return (
-      <div className="col-3 square" onClick={() => this.props.onClick()}>
-        <img src={img} alt={img.substr(img.lastIndexOf('/'), img.lastIndexOf('.'))}></img>
-      </div>
-    );
-  }
-
+const Square = (props) => {
+  return (
+    <div className="col-3 square" onClick={() =>  props.onClick()}>
+      <img src={props.image} alt={props.image.substr(props.image.lastIndexOf('/'), props.image.lastIndexOf('.'))}></img>
+    </div>
+  );
 }
 
 export default Square;
