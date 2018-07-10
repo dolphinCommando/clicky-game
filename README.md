@@ -1,6 +1,5 @@
 # Super (Mario) Memory
-AKA click-game
-Memory game in React
+AKA clicky-game
 
 ### Instructions
 Try to click all 9 tiles without clicking one of them twice.
