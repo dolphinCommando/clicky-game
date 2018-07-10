@@ -14,22 +14,23 @@ class Game extends React.Component {
       ip + "luigi.png",
       ip + "bowser.png",
       ip + "yoshi.png",
-      ip + "pirahnaplant.png",
+      ip + "plant.png",
       ip + "goomba.png",
       ip + "hammerbro.png"
     ];
+    
     this.state = {
       squares: new Array(this.images.length).fill(0),
       indices: [...this.images.keys()],
       score: 0,
-      wins: 0
+      wins: window.localStorage.getItem('marioMemoryWins') || 0
     };
   }
 
   handleClick(i) {
     const squaresCopy = Object.assign({}, this.state.squares);
     squaresCopy[i] += 1;
-    console.log(this.state.wins);
+    //console.log(this.state.wins);
     let loss = false;
     for (let property in squaresCopy) {
       if (squaresCopy[property] === 2) {
@@ -56,6 +57,7 @@ class Game extends React.Component {
       });
     }
     else if (every) {
+      window.localStorage.setItem('marioMemoryWins', +this.state.wins + 1);
       this.setState({
         squares: new Array(this.images.length).fill(0),
         indices: [...this.images.keys()],
@@ -99,10 +101,16 @@ class Game extends React.Component {
       return (<Square image={this.images[index]} onClick={() => this.handleClick(index)} />)
     });
     return (
-      <div className="container">
+      <div>
         <Score score={this.state.score} total={this.images.length} wins={this.state.wins}/>
-        <div className="row">
+        <div className="container">
+        <div className="jumbotron">
+          <h1 className="display-4 text-center">Super Memory</h1>
+          <p className="lead">Don't click on the same character twice!</p>
+        </div>       
+        <div className="row justify-content-center">
           {rows}
+        </div>
         </div>
       </div>
     );

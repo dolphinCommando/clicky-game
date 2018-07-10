@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #FFFFFF;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 2px 2px #333333;
+}
+.App footer {
+  margin-top: 75px;
+  padding: 15px;
+  background-color: #00D700;
+}
+
+.App a {
+  text-decoration: none;
+  color: #FFFFFF;
+}

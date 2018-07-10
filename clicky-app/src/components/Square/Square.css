@@ -1,15 +1,28 @@
 .square {
-  box-shadow: 3px 6px #99999999;
-  margin: 5px;
-  background-color: #ffffffff;
+  margin: 12px 30px;
+  padding: 10px 5px;
+  max-width: 250px;
+  background-color: #ffffff;
+  border: 4px solid #bbbbbb;
+  cursor: pointer;
+  box-shadow: 6px 6px 3px #999999; 
 }
 img {
-  width: 230px;
-  height: 290px;
+  width: 130px;
+  height: 170px;
 }
-/*
+
+@keyframes star {
+  0% {border: 4px solid #FFFF00;}
+  10% {border: 4px solid #FFFF00;}
+  25% {border: 4px solid #FFAA00;}
+  50% {border: 4px solid #FF00FF;}
+  75% {border: 4px solid #0000FF;}
+  100% {border: 4px solid #00FF00;}
+}
+
 .square:hover {
-  transform: scale(1.25);
-  box-shadow: 4px 8px #99999999;
+  animation-name: star;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
-*/

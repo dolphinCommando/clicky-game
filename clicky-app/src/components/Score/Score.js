@@ -3,12 +3,10 @@ import './Score.css';
 
 const Score = (props) => {
   return (
-    <div className="jumbotron">
-      <h1 className="display-4 text-center">Clicky Game</h1>
-      <hr className="my-4" />
-      <p>Squares Found: {props.score} / {props.total}</p>
-      <p>Games Completed: {props.wins}</p>
-    </div>
+    <nav className="navbar sticky-top">
+      <span className="text-left ml-5">Characters: {props.score} / {props.total}</span>
+      <span className="text-right mr-5">Games Completed: {props.wins}</span>
+    </nav>
   );
 }
 
