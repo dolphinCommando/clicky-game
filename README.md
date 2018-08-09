@@ -14,7 +14,7 @@ create-react-app was handy.
 Styling is CSS and Bootstrap 4.
 
 ### Play Super Memory!
-https://afternoon-anchorage-89588.herokuapp.com/
+https://afternoon-anchorage-89588.herokuapp.com/  
 https://dolphincommando.github.io/clicky-game/
 
 
