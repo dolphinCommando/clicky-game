@@ -62,7 +62,7 @@ class Game extends React.Component {
         squares: new Array(this.images.length).fill(0),
         indices: [...this.images.keys()],
         score: 0,
-        wins: this.state.wins + 1
+        wins: +this.state.wins + 1
       });      
     }
     else {
